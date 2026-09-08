@@ -36,6 +36,17 @@
 }
 
 @layer utilities {
+  /* The cursor companion trails the pointer, so it sits directly under
+     wherever you're about to click. React Three Fiber forces
+     pointer-events:auto on its <canvas>, which overrides the wrapper's
+     pointer-events-none and lets the blob swallow clicks on buttons/links
+     underneath it (notably the project filter tabs). Clamp the whole
+     subtree back to none — it must never be an interaction target. */
+  .cursor-companion,
+  .cursor-companion * {
+    pointer-events: none !important;
+  }
+
   .bg-noise {
     background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
     background-size: 22px 22px;

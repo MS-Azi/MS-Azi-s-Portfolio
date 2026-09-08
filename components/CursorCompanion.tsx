@@ -138,7 +138,7 @@ export function CursorCompanion() {
   if (!enabled) return null;
 
   return (
-    <div ref={wrapRef} className="pointer-events-none fixed left-0 top-0 z-30">
+    <div ref={wrapRef} className="cursor-companion pointer-events-none fixed left-0 top-0 z-30">
       {/* 3D companion — mounted only while above the projects section, so
           it stops costing GPU/CPU the moment you scroll past it */}
       {inHero && webgl && (

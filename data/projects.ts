@@ -100,7 +100,72 @@ export const projects: Project[] = [
     },
   },
 
+  // ---------- MOBILE APPS ----------
+  {
+    id: "mobile-volv",
+    category: "mobile",
+    title: "Volv — The Operating System for Ambitious Women",
+    tagline:
+      "For ambitious women building businesses, careers, and lives with intention — planning, tracking, learning, and growth in one structured system.",
+    coverImage: "/images/projects/volv-cover.jpg",
+    tools: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Expo Router",
+      "Supabase",
+      "PostgreSQL",
+      "Row Level Security",
+      "Expo Notifications",
+      "EAS",
+    ],
+    platforms: ["React Native", "Android"],
+    demoVideoUrl: "/images/projects/volv-demo.mp4",
+    caseStudy: {
+      problem:
+        "Ambitious women often use separate tools for planning, business tracking, career development, learning, and personal growth. Volv brings these fragmented activities into one structured system designed to help users move from reactive living to intentional execution.",
+      solution:
+        "A subscription mobile app combining daily/weekly/monthly planning, business and career KPI tracking, leadership development, goal tracking, curated learning content, and interactive productivity tools in one habit-forming experience.",
+      role:
+        "Product concept, UX/product design, feature architecture, mobile app development, Supabase backend implementation, authentication, database/RLS setup, notifications, navigation, offline/network handling, personalization, and testing. Built with React Native/Expo and TypeScript, with AI-assisted development through Claude Code.",
+      gallery: ["/images/projects/volv-cover.jpg"],
+    },
+  },
+
   // ---------- WEB DEVELOPMENT ----------
+  {
+    id: "web-imarc-attendance",
+    category: "web",
+    title: "iMarc Attendance System — GPS-Verified Attendance Management",
+    tagline:
+      "GPS-verified attendance management for modern architecture teams — clock in from your phone, validated against the office geofence.",
+    coverImage: "/images/projects/attendance-cover.png",
+    tools: [
+      "Next.js 14",
+      "App Router",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma ORM",
+      "JWT",
+      "jose",
+      "bcryptjs",
+      "ExcelJS",
+      "Nodemailer",
+      "Tailwind CSS",
+      "Render",
+    ],
+    demoVideoUrl: "/images/projects/attendance-demo.mp4",
+    featured: true,
+    caseStudy: {
+      problem:
+        "iMarcPro Architects needed a reliable way to track staff attendance without relying on manual registers or unverified clock-ins. The system needed to confirm that staff were physically at the office, identify lateness and missed clock-outs, and give management a clearer view of attendance records and trends.",
+      solution:
+        "A GPS-verified attendance web application that lets staff clock in and out from their phones through a browser. The system validates their location against a defined office geofence and blocks off-site clock-ins. It also tracks lateness, flags missed clock-outs as anomalies, provides an administrative dashboard and attendance logs, supports staff management and manual overrides, exports attendance data to Excel, and automatically generates and emails comprehensive monthly attendance reports.",
+      role:
+        "Product design, UX/UI design, system architecture, frontend and backend development, database design, authentication, GPS/geofencing logic, attendance workflows, reporting automation, Excel export, email automation, deployment, and testing. The visual design was intentionally inspired by iMarcPro Architects' architectural workflow — an aesthetic influenced by Revit and technical architectural drawings, with a structured, precise, technical feel that makes the system feel native to an architecture practice rather than a generic HR platform.",
+      gallery: ["/images/projects/attendance-cover.png"],
+    },
+  },
   {
     id: "web-payaza-clone",
     category: "web",
@@ -207,10 +272,13 @@ export const projects: Project[] = [
     category: "design",
     title: "Freelance Design Work — Social & Print Projects",
     tagline: "Freelance social media and print design work for real clients.",
-    coverImage: "/images/projects/social/hero-projects.png",
+    coverImage: "/images/projects/social/shethrive1.png",
     tools: ["Photoshop", "Figma", "Canva", "Adobe Illustrator"],
     images: [
       "/images/projects/social/hero-projects.png",
+      "/images/projects/social/shethrive1.png",
+      "/images/projects/social/shethrive2.png",
+      "/images/projects/social/shethrive3.png",
       "/images/projects/carousel/white-yellow-minimalist-quote-post.png",
       "/images/projects/print/dominion-city-aguda.png",
       "/images/projects/print/healthy4.png",
@@ -237,6 +305,9 @@ export const projects: Project[] = [
       role: "Freelance / solo graphic designer for each client.",
       gallery: [
         "/images/projects/social/hero-projects.png",
+        "/images/projects/social/shethrive1.png",
+        "/images/projects/social/shethrive2.png",
+        "/images/projects/social/shethrive3.png",
         "/images/projects/carousel/white-yellow-minimalist-quote-post.png",
         "/images/projects/print/dominion-city-aguda.png",
         "/images/projects/print/healthy4.png",

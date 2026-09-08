@@ -22,12 +22,20 @@ interface ProjectModalProps {
 export function ProjectModal({ project, initialVideo, onClose }: ProjectModalProps) {
   const [activeImage, setActiveImage] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   useEffect(() => {
     setActiveImage(0);
     setShowVideo(!!initialVideo);
+    setImgLoaded(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project]);
+
+  // Reset the loaded flag whenever the visible image changes so the
+  // incoming image fades in instead of the previous one lingering.
+  useEffect(() => {
+    setImgLoaded(false);
+  }, [activeImage]);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -94,21 +102,51 @@ export function ProjectModal({ project, initialVideo, onClose }: ProjectModalPro
                   className="h-full w-full bg-ink-950 object-contain"
                 />
               ) : (
-                <Image
-                  src={gallery[activeImage]}
-                  alt={`${project.title} — visual ${activeImage + 1}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 768px"
-                  className={cn(
-                    // Design pieces and phone screenshots both run tall/
-                    // odd aspect ratios — cropping to fill a wide landscape
-                    // box would cut off most of the actual image.
-                    project.category === "design" || project.category === "mobile"
-                      ? "object-contain p-4"
-                      : "object-cover"
+                <>
+                  {/* Neutral surface while a slide is still decoding, so a
+                      slow swap never leaves the previous picture on screen. */}
+                  {!imgLoaded && (
+                    <div className="absolute inset-0 animate-pulse bg-ink-800" />
                   )}
-                  priority
-                />
+                  {/* Render the current slide plus its immediate neighbours,
+                      all stacked and at full display size. Only the active one
+                      is visible; the neighbours load in the background at the
+                      exact same URL/size, so Next / Prev swaps are instant and
+                      next/image never lingers on a stale src (each layer is
+                      keyed to its own source). */}
+                  {gallery.map((src, i) => {
+                    const isNeighbour =
+                      i === activeImage ||
+                      i === (activeImage + 1) % gallery.length ||
+                      i === (activeImage - 1 + gallery.length) % gallery.length;
+                    if (!isNeighbour) return null;
+                    const isActive = i === activeImage;
+                    return (
+                      <Image
+                        // Distinct key per role so the active slide always
+                        // mounts fresh (firing onLoad, even from cache) rather
+                        // than inheriting a neighbour's already-settled state.
+                        key={isActive ? `active-${src}` : `peer-${src}`}
+                        src={src}
+                        alt={isActive ? `${project.title} — visual ${i + 1}` : ""}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 768px"
+                        onLoad={isActive ? () => setImgLoaded(true) : undefined}
+                        className={cn(
+                          "transition-opacity duration-300",
+                          isActive && imgLoaded ? "opacity-100" : "opacity-0",
+                          // Design pieces and phone screenshots both run tall/
+                          // odd aspect ratios — cropping to fill a wide
+                          // landscape box would cut off most of the image.
+                          project.category === "design" || project.category === "mobile"
+                            ? "object-contain p-4"
+                            : "object-cover"
+                        )}
+                        priority={isActive}
+                      />
+                    );
+                  })}
+                </>
               )}
 
               {!showVideo && gallery.length > 1 && (
