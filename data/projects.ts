@@ -134,32 +134,6 @@ export const projects: Project[] = [
 
   // ---------- WEB DEVELOPMENT ----------
   {
-    id: "web-payroll-management",
-    category: "web",
-    title: "Payroll Management System — Payroll Automation for Businesses",
-    tagline:
-      "Automating payroll operations for businesses and companies — centralized employee records, salary and deduction calculations, and payroll reporting.",
-    coverImage: "/images/projects/work-cover.png",
-    tools: [
-      "Figma",
-      "Wireframing",
-      "Prototyping",
-      "UI Design",
-      "UX Design",
-      "User Flows",
-    ],
-    demoVideoUrl: "/images/projects/work-demo.mp4",
-    caseStudy: {
-      problem:
-        "Many businesses still manage payroll activities manually using spreadsheets and disconnected processes, making it time-consuming to calculate salaries, track deductions, manage employee records, and prepare payroll reports. These manual processes can also increase the risk of errors and administrative delays.",
-      solution:
-        "A payroll management web application designed to automate key payroll activities for businesses. The system centralizes employee information, streamlines salary calculations and deductions, simplifies payroll processing, and provides businesses with organized payroll records and reports.",
-      role:
-        "Product design, UI/UX design, frontend development, backend development, database design, payroll workflow design, automation logic, and testing.",
-      gallery: ["/images/projects/work-cover.png"],
-    },
-  },
-  {
     id: "web-imarc-attendance",
     category: "web",
     title: "iMarc Attendance System — GPS-Verified Attendance Management",
@@ -293,6 +267,33 @@ export const projects: Project[] = [
   },
 
   // ---------- GRAPHIC / UI-UX DESIGN ----------
+  {
+    id: "design-payroll-management",
+    category: "design",
+    title: "Payroll Management System — UI/UX Design",
+    tagline:
+      "Automating payroll operations for businesses and companies — centralized employee records, salary and deduction calculations, and payroll reporting.",
+    coverImage: "/images/projects/work-cover.png",
+    tools: [
+      "Figma",
+      "Wireframing",
+      "Prototyping",
+      "UI Design",
+      "UX Design",
+      "User Flows",
+    ],
+    demoVideoUrl: "/images/projects/work-demo.mp4",
+    images: ["/images/projects/work-cover.png"],
+    caseStudy: {
+      problem:
+        "Many businesses still manage payroll activities manually using spreadsheets and disconnected processes, making it time-consuming to calculate salaries, track deductions, manage employee records, and prepare payroll reports. These manual processes can also increase the risk of errors and administrative delays.",
+      solution:
+        "A payroll management web application designed to automate key payroll activities for businesses. The system centralizes employee information, streamlines salary calculations and deductions, simplifies payroll processing, and provides businesses with organized payroll records and reports.",
+      role:
+        "Product design, UI/UX design, frontend development, backend development, database design, payroll workflow design, automation logic, and testing.",
+      gallery: ["/images/projects/work-cover.png"],
+    },
+  },
   {
     id: "design-freelance-jobs",
     category: "design",
