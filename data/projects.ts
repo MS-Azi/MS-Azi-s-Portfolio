@@ -134,6 +134,32 @@ export const projects: Project[] = [
 
   // ---------- WEB DEVELOPMENT ----------
   {
+    id: "web-payroll-management",
+    category: "web",
+    title: "Payroll Management System — Payroll Automation for Businesses",
+    tagline:
+      "Automating payroll operations for businesses and companies — centralized employee records, salary and deduction calculations, and payroll reporting.",
+    coverImage: "/images/projects/work-cover.png",
+    tools: [
+      "Figma",
+      "Wireframing",
+      "Prototyping",
+      "UI Design",
+      "UX Design",
+      "User Flows",
+    ],
+    demoVideoUrl: "/images/projects/work-demo.mp4",
+    caseStudy: {
+      problem:
+        "Many businesses still manage payroll activities manually using spreadsheets and disconnected processes, making it time-consuming to calculate salaries, track deductions, manage employee records, and prepare payroll reports. These manual processes can also increase the risk of errors and administrative delays.",
+      solution:
+        "A payroll management web application designed to automate key payroll activities for businesses. The system centralizes employee information, streamlines salary calculations and deductions, simplifies payroll processing, and provides businesses with organized payroll records and reports.",
+      role:
+        "Product design, UI/UX design, frontend development, backend development, database design, payroll workflow design, automation logic, and testing.",
+      gallery: ["/images/projects/work-cover.png"],
+    },
+  },
+  {
     id: "web-imarc-attendance",
     category: "web",
     title: "iMarc Attendance System — GPS-Verified Attendance Management",
@@ -376,6 +402,33 @@ export const projects: Project[] = [
         "Ran the full HCI design process — user research, the Double Diamond framework, usability heuristics, and iterative prototyping — for a concept smart wristband that uses machine learning to predict blood-glucose drops up to 45 minutes in advance, translated into a polished product landing page with a real-time prediction UI.",
       role: "Team lead — directed the design process and final deliverable.",
       gallery: ["/images/projects/gew-photo.png"],
+    },
+  },
+  {
+    id: "design-fcet-akoka-portal",
+    category: "design",
+    title: "FCE (Technical), Akoka — Student Portal Redesign",
+    tagline:
+      "A streamlined digital portal for managing the student academic experience at Federal College of Education (Technical), Akoka.",
+    coverImage: "/images/projects/fcet-cover.png",
+    tools: [
+      "Figma",
+      "Wireframing",
+      "Prototyping",
+      "UI Design",
+      "UX Design",
+      "User Flows",
+    ],
+    demoVideoUrl: "/images/projects/fcet-demo.mp4",
+    images: ["/images/projects/fcet-cover.png"],
+    caseStudy: {
+      problem:
+        "The existing student experience involved navigating academic and administrative processes across a system that could be difficult to use and lacked a modern, intuitive interface. Students needed a clearer way to access important academic information and complete common portal tasks.",
+      solution:
+        "A redesigned school portal experience focused on simplifying navigation, improving information hierarchy, and making key student activities easier to access. The interface was structured around the needs of students, with clearer user flows, organized academic information, and a more modern and accessible visual experience.",
+      role:
+        "UI/UX Designer — responsible for user flow planning, wireframing, interface design, information architecture, prototyping, and creating the overall visual design system for the student portal.",
+      gallery: ["/images/projects/fcet-cover.png"],
     },
   },
 ];
