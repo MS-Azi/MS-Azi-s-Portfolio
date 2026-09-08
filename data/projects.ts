@@ -127,7 +127,7 @@ export const projects: Project[] = [
       solution:
         "A subscription mobile app combining daily/weekly/monthly planning, business and career KPI tracking, leadership development, goal tracking, curated learning content, and interactive productivity tools in one habit-forming experience.",
       role:
-        "Product concept, UX/product design, feature architecture, mobile app development, Supabase backend implementation, authentication, database/RLS setup, notifications, navigation, offline/network handling, personalization, and testing. Built with React Native/Expo and TypeScript, with AI-assisted development through Claude Code.",
+        "Product concept, UX/product design, feature architecture, mobile app development, Supabase backend implementation, authentication, database/RLS setup, notifications, navigation, offline/network handling, personalization, and testing. Built with React Native/Expo and TypeScript.",
       gallery: ["/images/projects/volv-cover.jpg"],
     },
   },

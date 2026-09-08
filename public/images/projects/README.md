@@ -1,3 +1,2 @@
-Drop real project screenshots/covers here (e.g. `orbit-crm.jpg`,
-`tidepool-app.png`). Tell Claude the filename for each project and it'll
-wire it into `data/projects.ts`.
+Project screenshots and covers live here. Reference them from
+`data/projects.ts` as `/images/projects/<filename>`.
