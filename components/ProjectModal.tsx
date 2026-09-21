@@ -91,7 +91,15 @@ export function ProjectModal({ project, initialVideo, onClose }: ProjectModalPro
             </button>
 
             {/* Gallery / demo video */}
-            <div className="relative aspect-video w-full overflow-hidden bg-ink-950">
+            <div
+              className={cn(
+                "relative w-full overflow-hidden bg-ink-950",
+                // Phone-screenshot galleries run tall/portrait — a fixed 16:9
+                // box would letterbox them down to a sliver. Give them a
+                // taller box so the screenshot actually fills the view.
+                project.tallGallery ? "h-[60vh] max-h-[560px]" : "aspect-video"
+              )}
+            >
               {showVideo && demoVideoUrl ? (
                 // eslint-disable-next-line jsx-a11y/media-has-caption
                 <video
@@ -138,7 +146,9 @@ export function ProjectModal({ project, initialVideo, onClose }: ProjectModalPro
                           // Design pieces and phone screenshots both run tall/
                           // odd aspect ratios — cropping to fill a wide
                           // landscape box would cut off most of the image.
-                          project.category === "design" || project.category === "mobile"
+                          project.category === "design" ||
+                            project.category === "mobile" ||
+                            project.tallGallery
                             ? "object-contain p-4"
                             : "object-cover"
                         )}

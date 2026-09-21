@@ -19,6 +19,10 @@ export interface BaseProject {
   // A local video file or link that can be watched inline in the modal —
   // available regardless of category (mobile app demos, design walkthroughs).
   demoVideoUrl?: string;
+  // Set when a non-mobile/design project's gallery is made of tall phone
+  // screenshots — tells the modal to letterbox (object-contain) instead of
+  // cropping to fill the wide 16:9 frame.
+  tallGallery?: boolean;
 }
 
 export interface WebProject extends BaseProject {
@@ -156,6 +160,7 @@ export const projects: Project[] = [
     ],
     demoVideoUrl: "/images/projects/attendance-demo.mp4",
     featured: true,
+    tallGallery: true,
     caseStudy: {
       problem:
         "iMarcPro Architects needed a reliable way to track staff attendance without relying on manual registers or unverified clock-ins. The system needed to confirm that staff were physically at the office, identify lateness and missed clock-outs, and give management a clearer view of attendance records and trends.",
